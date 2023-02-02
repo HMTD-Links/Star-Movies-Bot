@@ -17,8 +17,6 @@ from pyrogram import StopPropagation, filters
 from pyrogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup
 import config
 
-LOG_CHANNEL = config.LOG_CHANNEL
-
 ################################################################################################################################################################################################################################################
 # Start Command
 
@@ -37,23 +35,6 @@ TELETIPS_MAIN_MENU_BUTTONS = [
                 InlineKeyboardButton('📣 Update Channel', url='https://t.me/Star_Moviess_Tamil')
             ]
         ]
-
-@Star_Moviess_Tamil.on_message(filters.private)
-async def _(bot, cmd):
-    await handle_user_status(bot, cmd)
-
-    chat_id = message.from_user.id
-    if not await db.is_user_exist(chat_id):
-        data = await client.get_me()
-        BOT_USERNAME = data.username
-        await db.add_user(chat_id)
-        if LOG_CHANNEL:
-            await client.send_message(
-                LOG_CHANNEL,
-                f"**#New_User :- \n\nNew User [{message.from_user.first_name}](tg://user?id={message.from_user.id}) started @{BOT_USERNAME} !!**",
-            )
-        else:
-            logging.info(f"New User :- Name :- {message.from_user.first_name} ID :- {message.from_user.id}")
 
 @Star_Moviess_Tamil.on_message(filters.command('start') & filters.private)
 async def start(client, message):

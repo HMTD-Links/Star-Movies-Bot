@@ -3,7 +3,7 @@ logger = logging.getLogger(__name__)
 
 from pyrogram import Client, filters
 from bot import Star_Moviess_Tamil
-from config import config
+from config import Config
 from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup, ReplyKeyboardMarkup, CallbackQuery
 from translation import Translation
 from pyrogram.errors import MessageNotModified, UserIsBlocked, InputUserDeactivated, FloodWait

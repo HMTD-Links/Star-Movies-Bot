@@ -22,11 +22,6 @@ import config
 
 
 LOG_CHANNEL = config.LOG_CHANNEL
-AUTH_USERS = config.AUTH_USERS
-DB_URL = config.DB_URL
-DB_NAME = config.DB_NAME
-
-db = Database(DB_URL, DB_NAME)
 
 class Star_Moviess_Tamil(Client, Config):
     def __init__(self):

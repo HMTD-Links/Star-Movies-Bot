@@ -1,17 +1,20 @@
+
+
+
 ################################################################################################################################################################################################################################################
 
                   # Star Movies Tamil
 
 ################################################################################################################################################################################################################################################
 
-#@Star_Moviess_Tamil.on_message(filters.command("alien_covenant") & filters.private & filters.incoming)
-#async def start(client, message):
-#    await message.reply_photo(
-#        caption = Translation.ALIEN_COVENANT.format(
-#                mention = message.from_user.mention
-#            ),
-#        photo="https://telegra.ph/file/206f9013802376b39ad03.jpg",
-#        quote=True,
-#    )
+@Star_Moviess_Tamil.on_message(filters.command("alien_covenant") & filters.private & filters.incoming)
+async def start(client, message):
+    await message.reply_photo(
+        caption = Translation.ALIEN_COVENANT.format(
+                mention = message.from_user.mention
+            ),
+        photo="https://telegra.ph/file/206f9013802376b39ad03.jpg",
+        quote=True,
+    )
 
 ################################################################################################################################################################################################################################################

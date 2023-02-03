@@ -169,7 +169,7 @@ TELETIPS_MAIN_MENU_BUTTONS = [
 async def start(client, message):
     reply_markup = InlineKeyboardMarkup(TELETIPS_MAIN_MENU_BUTTONS)
     await message.reply_photo(
-        text = Movies.ALIEN_COVENANT.format(
+        caption = Movies.ALIEN_COVENANT.format(
                 mention = message.from_user.mention
             ),
         reply_markup=reply_markup,

@@ -37,3 +37,7 @@ Click here to Download 👇
       # Alien Covenant (2017) Page 5
       MOVIES.ALIEN_COVENANT_PAGE5 = """<b>Hi 👋🏻 {mention} ♥️,</b>"""
 
+
+      # Tamil Movies
+      MOVIES.TAMIL_MOVIES = """<b>Hi 👋🏻 {mention} ♥️,</b>"""
+

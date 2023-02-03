@@ -28,8 +28,8 @@ ALIEN_COVENANT = "MOVIES.ALIEN_COVENANT"
 
 TELETIPS_MAIN_MENU_BUTTONS = [
             [
-                InlineKeyboardButton('📃 1/4', callback_data="GROUP_CALLBACK"),
-                InlineKeyboardButton('Next ➡️', callback_data="HELP_CALLBACK")
+                InlineKeyboardButton('📃 1/4', callback_data="pages"),
+                InlineKeyboardButton('Next ➡️', callback_data="page 1")
             ]
         ]
 
@@ -47,15 +47,37 @@ async def alien_covenant(client, message):
 
 @Star_Moviess_Tamil.on_callback_query()
 async def callback_query(client: Client, query: CallbackQuery):
-    if query.data=="MOVIES.ALIEN_COVENANT_PAGE2":
+    if query.data=="page 1":
         TELETIPS_HELP_BUTTONS = [
             [
-                InlineKeyboardButton("⬅️ BACK", callback_data="START_CALLBACK"),
-                InlineKeyboardButton('📃 2/4', callback_data="GROUP_CALLBACK"),
-                InlineKeyboardButton('Next ➡️', callback_data="HELP_CALLBACK")
+                InlineKeyboardButton("⬅️ BACK", callback_data="page 1"),
+                InlineKeyboardButton('📃 2/4', callback_data="pages"),
+                InlineKeyboardButton('Next ➡️', callback_data="page 2")
             ]
             ]
         reply_markup = InlineKeyboardMarkup(TELETIPS_HELP_BUTTONS)
+        try:
+            await query.edit_message_text(
+                text = MOVIES.ALIEN_COVENANT_PAGE1.format(
+                        mention = query.from_user.mention
+                    ),
+                reply_markup=reply_markup
+            ),
+        photo="https://telegra.ph/file/206f9013802376b39ad03.jpg",
+        quote=True
+    )
+        except MessageNotModified:
+            pass
+
+    elif query.data=="page 2":
+        TELETIPS_GROUP_BUTTONS = [
+            [
+                InlineKeyboardButton("⬅️ BACK", callback_data="page 2"),
+                InlineKeyboardButton('📃 3/4', callback_data="pages"),
+                InlineKeyboardButton('Next ➡️', callback_data="page 3")
+            ]
+            ]
+        reply_markup = InlineKeyboardMarkup(TELETIPS_GROUP_BUTTONS)
         try:
             await query.edit_message_text(
                 text = MOVIES.ALIEN_COVENANT_PAGE2.format(
@@ -67,42 +89,20 @@ async def callback_query(client: Client, query: CallbackQuery):
         quote=True
     )
         except MessageNotModified:
-            pass
-
-    elif query.data=="GROUP_CALLBACK":
-        TELETIPS_GROUP_BUTTONS = [
-            [
-                InlineKeyboardButton("⬅️ BACK", callback_data="START_CALLBACK"),
-                InlineKeyboardButton('📃 3/4', callback_data="GROUP_CALLBACK"),
-                InlineKeyboardButton('Next ➡️', callback_data="HELP_CALLBACK")
-            ]
-            ]
-        reply_markup = InlineKeyboardMarkup(TELETIPS_GROUP_BUTTONS)
-        try:
-            await query.edit_message_text(
-                text = Translation.START.format(
-                        mention = query.from_user.mention
-                    ),
-                reply_markup=reply_markup
-            ),
-        photo="https://telegra.ph/file/206f9013802376b39ad03.jpg",
-        quote=True
-    )
-        except MessageNotModified:
             pass    
 
-    elif query.data=="TUTORIAL_CALLBACK":
+    elif query.data=="page 3":
         TELETIPS_TUTORIAL_BUTTONS = [
             [
                 InlineKeyboardButton("⬅️ BACK", callback_data="START_CALLBACK"),
-                InlineKeyboardButton('📃 4/4', callback_data="GROUP_CALLBACK"),
+                InlineKeyboardButton('📃 4/4', callback_data="pages"),
                 InlineKeyboardButton('Next ➡️', callback_data="HELP_CALLBACK")
             ]
             ]
         reply_markup = InlineKeyboardMarkup(TELETIPS_TUTORIAL_BUTTONS)
         try:
             await query.edit_message_text(
-                text = Translation.START.format(
+                text = MOVIES.ALIEN_COVENANT_PAGE3.format(
                         mention = query.from_user.mention
                     ),
                 reply_markup=reply_markup
@@ -113,18 +113,18 @@ async def callback_query(client: Client, query: CallbackQuery):
         except MessageNotModified:
             pass      
           
-    elif query.data=="START_CALLBACK":
+    elif query.data=="page":
         TELETIPS_START_BUTTONS = [
             [
                 InlineKeyboardButton("⬅️ BACK", callback_data="START_CALLBACK"),
-                InlineKeyboardButton('📃 4/4', callback_data="GROUP_CALLBACK"),
+                InlineKeyboardButton('📃 4/4', callback_data="pages"),
             ]
         ]
 
         reply_markup = InlineKeyboardMarkup(TELETIPS_START_BUTTONS)
         try:
             await query.edit_message_text(
-                text = Translation.START.format(
+                text = MOVIES.ALIEN_COVENANT.format(
                         mention = query.from_user.mention
                     ),
                 reply_markup=reply_markup

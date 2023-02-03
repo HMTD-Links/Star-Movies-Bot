@@ -70,7 +70,7 @@ async def callback_query(client: Client, query: CallbackQuery):
     if query.data=="page 2":
         MOVIE_PAGE2_BUTTONS = [
             [
-                InlineKeyboardButton("⬅️ BACK", callback_data="page 1"),
+                InlineKeyboardButton("⬅️ Back", callback_data="page 1"),
                 InlineKeyboardButton('📃 2/5', callback_data="pages"),
                 InlineKeyboardButton('Next ➡️', callback_data="page 3")
             ]
@@ -91,7 +91,7 @@ async def callback_query(client: Client, query: CallbackQuery):
     elif query.data=="page 3":
         MOVIE_PAGE3_BUTTONS = [
             [
-                InlineKeyboardButton("⬅️ BACK", callback_data="page 2"),
+                InlineKeyboardButton("⬅️ Back", callback_data="page 2"),
                 InlineKeyboardButton('📃 3/5', callback_data="pages"),
                 InlineKeyboardButton('Next ➡️', callback_data="page 4")
             ]
@@ -112,7 +112,7 @@ async def callback_query(client: Client, query: CallbackQuery):
     elif query.data=="page 4":
         MOVIE_PAGE4_BUTTONS = [
             [
-                InlineKeyboardButton("⬅️ BACK", callback_data="page 3"),
+                InlineKeyboardButton("⬅️ Back", callback_data="page 3"),
                 InlineKeyboardButton('📃 4/5', callback_data="pages"),
                 InlineKeyboardButton('Next ➡️', callback_data="page 5")
             ]
@@ -133,7 +133,7 @@ async def callback_query(client: Client, query: CallbackQuery):
     elif query.data=="page 5":
         MOVIE_PAGE5_BUTTONS = [
             [
-                InlineKeyboardButton("⬅️ BACK", callback_data="page 4"),
+                InlineKeyboardButton("⬅️ Back", callback_data="page 4"),
                 InlineKeyboardButton('📃 5/5', callback_data="pages"),
             ]
         ]

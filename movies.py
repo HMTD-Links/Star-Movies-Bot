@@ -1,4 +1,4 @@
-class Translation(object):
+class Movies(object):
 
       # Alien Covenant (2017) 
       ALIEN_COVENANT = """<b>Hi 👋🏻 {mention} ♥️,

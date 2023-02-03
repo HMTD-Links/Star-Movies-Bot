@@ -47,7 +47,7 @@ ALIEN_COVENANT = "Movies.ALIEN_COVENANT"
 
 MOVIE_BUTTONS = [
             [
-                InlineKeyboardButton('📃 1/5', callback_data="pages"),
+                InlineKeyboardButton('📃 1/5', callback_data="PAGES"),
                 InlineKeyboardButton('Next ➡️', callback_data="PAGE_2")
             ]
         ]
@@ -71,7 +71,7 @@ async def callback_query(client: Client, query: CallbackQuery):
         MOVIE_PAGE2_BUTTONS = [
             [
                 InlineKeyboardButton("⬅️ Back", callback_data="PAGE_1"),
-                InlineKeyboardButton('📃 2/5', callback_data="pages"),
+                InlineKeyboardButton('📃 2/5', callback_data="PAGES"),
                 InlineKeyboardButton('Next ➡️', callback_data="PAGE_3")
             ]
             ]
@@ -91,9 +91,9 @@ async def callback_query(client: Client, query: CallbackQuery):
     elif query.data=="PAGE_3":
         MOVIE_PAGE3_BUTTONS = [
             [
-                InlineKeyboardButton("⬅️ Back", callback_data="page_2"),
-                InlineKeyboardButton('📃 3/5', callback_data="pages"),
-                InlineKeyboardButton('Next ➡️', callback_data="page_4")
+                InlineKeyboardButton("⬅️ Back", callback_data="PAGE_2"),
+                InlineKeyboardButton('📃 3/5', callback_data="PAGES"),
+                InlineKeyboardButton('Next ➡️', callback_data="PAGE_4")
             ]
             ]
         reply_markup = InlineKeyboardMarkup(MOVIE_PAGE3_BUTTONS)
@@ -109,12 +109,12 @@ async def callback_query(client: Client, query: CallbackQuery):
         except MessageNotModified:
             pass    
 
-    elif query.data=="page_4":
+    elif query.data=="PAGE_4":
         MOVIE_PAGE4_BUTTONS = [
             [
-                InlineKeyboardButton("⬅️ Back", callback_data="page_3"),
-                InlineKeyboardButton('📃 4/5', callback_data="pages"),
-                InlineKeyboardButton('Next ➡️', callback_data="page_5")
+                InlineKeyboardButton("⬅️ Back", callback_data="PAGE_3"),
+                InlineKeyboardButton('📃 4/5', callback_data="PAGES"),
+                InlineKeyboardButton('Next ➡️', callback_data="PAGE_5")
             ]
             ]
         reply_markup = InlineKeyboardMarkup(MOVIE_PAGE4_BUTTONS)
@@ -130,11 +130,11 @@ async def callback_query(client: Client, query: CallbackQuery):
         except MessageNotModified:
             pass      
           
-    elif query.data=="page_5":
+    elif query.data=="PAGE_5":
         MOVIE_PAGE5_BUTTONS = [
             [
-                InlineKeyboardButton("⬅️ Back", callback_data="page_4"),
-                InlineKeyboardButton('📃 5/5', callback_data="pages"),
+                InlineKeyboardButton("⬅️ Back", callback_data="PAGE_4"),
+                InlineKeyboardButton('📃 5/5', callback_data="PAGES"),
             ]
         ]
 

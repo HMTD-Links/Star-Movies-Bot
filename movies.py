@@ -41,5 +41,5 @@ Click here to Download 👇
       # Tamil Movies
       TAMIL_MOVIES = """<b>Hi 👋🏻 {mention} ♥️,
 
-Alien Covenant (2017) :- alien_covenant</b>"""
+Alien Covenant (2017) :- /alien_covenant</b>"""
 

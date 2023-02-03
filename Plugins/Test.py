@@ -24,7 +24,7 @@ import config
 ################################################################################################################################################################################################################################################
 # Alien Covenant (2017)
 
-ALIEN_COVENANT = "MOVIES.ALIEN_COVENANT"
+ALIEN_COVENANT = "Movies.ALIEN_COVENANT"
 
 MOVIE_BUTTONS = [
             [
@@ -36,7 +36,7 @@ MOVIE_BUTTONS = [
 @Star_Moviess_Tamil.on_message(filters.command("alien_covenant") & filters.private & filters.incoming)
 async def alien_covenant(client, message):
     await message.reply_photo(
-        caption = MOVIES.ALIEN_COVENANT.format(
+        caption = Movies.ALIEN_COVENANT.format(
                 mention = message.from_user.mention
             ),
         reply_markup=reply_markup,
@@ -58,7 +58,7 @@ async def callback_query(client: Client, query: CallbackQuery):
         reply_markup = InlineKeyboardMarkup(MOVIE_PAGE2_BUTTONS)
         try:
             await query.edit_message_photo(
-        caption = MOVIES.ALIEN_COVENANT_PAGE2.format(
+        caption = Movies.ALIEN_COVENANT_PAGE2.format(
                 mention = message.from_user.mention
             ),
         reply_markup=reply_markup,
@@ -79,7 +79,7 @@ async def callback_query(client: Client, query: CallbackQuery):
         reply_markup = InlineKeyboardMarkup(MOVIE_PAGE3_BUTTONS)
         try:
             await query.edit_message_photo(
-        caption = MOVIES.ALIEN_COVENANT_PAGE3.format(
+        caption = Movies.ALIEN_COVENANT_PAGE3.format(
                 mention = message.from_user.mention
             ),
         reply_markup=reply_markup,
@@ -100,7 +100,7 @@ async def callback_query(client: Client, query: CallbackQuery):
         reply_markup = InlineKeyboardMarkup(MOVIE_PAGE4_BUTTONS)
         try:
             await query.edit_message_photo(
-        caption = MOVIES.ALIEN_COVENANT_PAGE4.format(
+        caption = Movies.ALIEN_COVENANT_PAGE4.format(
                 mention = message.from_user.mention
             ),
         reply_markup=reply_markup,
@@ -121,7 +121,7 @@ async def callback_query(client: Client, query: CallbackQuery):
         reply_markup = InlineKeyboardMarkup(MOVIE_PAGE5_BUTTONS)
         try:
             await query.edit_message_photo(
-        caption = MOVIES.ALIEN_COVENANT_PAGE5.format(
+        caption = Movies.ALIEN_COVENANT_PAGE5.format(
                 mention = message.from_user.mention
             ),
         reply_markup=reply_markup,

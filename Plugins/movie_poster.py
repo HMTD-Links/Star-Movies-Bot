@@ -54,6 +54,7 @@ MOVIE_BUTTONS = [
 
 @Star_Moviess_Tamil.on_message(filters.command("alien_covenant") & filters.private & filters.incoming)
 async def alien_covenant(client, message):
+    reply_markup = InlineKeyboardMarkup(MOVIE_BUTTONS)
     await message.reply_photo(
         caption = Movies.ALIEN_COVENANT.format(
                 mention = message.from_user.mention

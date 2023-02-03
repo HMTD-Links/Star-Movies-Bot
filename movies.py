@@ -24,3 +24,16 @@ Click here to Download 👇
 ❗Note :- We're Recommend Brave Browser
 
 📢 Updates Channel :- [Star Movies Tamil](https://t.me/Star_Moviess_Tamil)</b>"""
+
+      # Alien Covenant (2017) Page 2
+      MOVIES.ALIEN_COVENANT_PAGE2 = """<b>Hi 👋🏻 {mention} ♥️,</b>"""
+
+      # Alien Covenant (2017) Page 3
+      MOVIES.ALIEN_COVENANT_PAGE3 = """<b>Hi 👋🏻 {mention} ♥️,</b>"""
+
+      # Alien Covenant (2017) Page 4
+      MOVIES.ALIEN_COVENANT_PAGE4 = """<b>Hi 👋🏻 {mention} ♥️,</b>"""
+
+      # Alien Covenant (2017) Page 5
+      MOVIES.ALIEN_COVENANT_PAGE5 = """<b>Hi 👋🏻 {mention} ♥️,</b>"""
+

@@ -56,7 +56,7 @@ MOVIE_BUTTONS = [
 async def alien_covenant(client, message):
     reply_markup = InlineKeyboardMarkup(MOVIE_BUTTONS)
     await message.reply_photo(
-        caption = Movies.ALIEN_COVENANT.format(mention = message.from_user.mention),
+        caption = Movies.ALIEN_COVENANT.format(message.from_user.mention),
         reply_markup=reply_markup,
         photo="https://telegra.ph/file/206f9013802376b39ad03.jpg",
         quote=True
@@ -76,9 +76,7 @@ async def callback_query(client: Client, query: CallbackQuery):
         reply_markup = InlineKeyboardMarkup(MOVIE_PAGE2_BUTTONS)
         try:
             await query.edit_message_photo(
-                caption = Movies.ALIEN_COVENANT_PAGE2.format(
-                        mention = message.from_user.mention
-                    ),
+                caption = Movies.ALIEN_COVENANT_PAGE2.format(query.from_user.mention),
                 reply_markup=reply_markup,
                 photo="https://telegra.ph/file/206f9013802376b39ad03.jpg",
                 quote=True

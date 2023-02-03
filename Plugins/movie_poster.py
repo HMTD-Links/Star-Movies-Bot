@@ -152,3 +152,112 @@ async def callback_query(client: Client, query: CallbackQuery):
 
 
 ################################################################################################################################################################################################################################################
+
+START = "Translation.START"
+
+TELETIPS_MAIN_MENU_BUTTONS = [
+            [
+                InlineKeyboardButton('Next ➡️', callback_data="TUTORIAL_CALLBACK"),
+                InlineKeyboardButton('Next ➡️', callback_data="GROUP_CALLBACK"),
+            ],
+            [
+                InlineKeyboardButton('🔗 Direct Link', callback_data="HELP_CALLBACK")
+            ]
+        ]
+
+@Star_Moviess_Tamil.on_message(filters.command('start') & filters.private)
+async def start(client, message):
+    reply_markup = InlineKeyboardMarkup(TELETIPS_MAIN_MENU_BUTTONS)
+    await message.reply_text(
+        text = Translation.START.format(
+                mention = message.from_user.mention
+            ),
+        reply_markup=reply_markup,
+        disable_web_page_preview=True
+    )
+    raise StopPropagation
+
+@Star_Moviess_Tamil.on_callback_query()
+async def callback_query(client: Client, query: CallbackQuery):
+    if query.data=="HELP_CALLBACK":
+        TELETIPS_HELP_BUTTONS = [
+            [
+                InlineKeyboardButton("⬅️ BACK", callback_data="START_CALLBACK")
+            ]
+            ]
+        reply_markup = InlineKeyboardMarkup(TELETIPS_HELP_BUTTONS)
+        try:
+            await query.edit_message_text(
+                Translation.HELP,
+                disable_web_page_preview=True,
+                reply_markup=reply_markup
+            )
+        except MessageNotModified:
+            pass
+
+    elif query.data=="GROUP_CALLBACK":
+        TELETIPS_GROUP_BUTTONS = [
+            [
+                InlineKeyboardButton("Star Movies Feedback", url="https://t.me/Star_Movies_Feedback_Bot")
+            ],
+            [
+                InlineKeyboardButton("⬅️ BACK", callback_data="START_CALLBACK"),
+            ]
+            ]
+        reply_markup = InlineKeyboardMarkup(TELETIPS_GROUP_BUTTONS)
+        try:
+            await query.edit_message_text(
+                Translation.SUPPORT,
+                disable_web_page_preview=True,
+                reply_markup=reply_markup
+            )
+        except MessageNotModified:
+            pass    
+
+    elif query.data=="TUTORIAL_CALLBACK":
+        TELETIPS_TUTORIAL_BUTTONS = [
+            [
+                InlineKeyboardButton("🤵 Admin", url="https://t.me/Star_Movies_Karthik")
+            ],
+            [
+                InlineKeyboardButton("⬅️ BACK", callback_data="START_CALLBACK"),
+            ]
+            ]
+        reply_markup = InlineKeyboardMarkup(TELETIPS_TUTORIAL_BUTTONS)
+        try:
+            await query.edit_message_text(
+                Translation.ABOUT,
+                disable_web_page_preview=True,
+                reply_markup=reply_markup
+            )
+        except MessageNotModified:
+            pass      
+          
+    elif query.data=="START_CALLBACK":
+        TELETIPS_START_BUTTONS = [
+            [
+                InlineKeyboardButton('👨‍💻 Creator', url='https://t.me/Star_Movies_Karthik')
+            ],
+            [
+                InlineKeyboardButton('😎 About', callback_data="TUTORIAL_CALLBACK"),
+                InlineKeyboardButton('👥 Support', callback_data="GROUP_CALLBACK"),
+                InlineKeyboardButton('😁 Help', callback_data="HELP_CALLBACK")
+            ],
+            [
+                InlineKeyboardButton('📣 Update Channel', url='https://t.me/Star_Moviess_Tamil')
+            ]
+        ]
+
+        reply_markup = InlineKeyboardMarkup(TELETIPS_START_BUTTONS)
+        try:
+            await query.edit_message_text(
+                text = Translation.START.format(
+                        mention = query.from_user.mention
+                    ),
+                disable_web_page_preview=True,
+                reply_markup=reply_markup
+            )
+        except MessageNotModified:
+            pass    
+        return
+

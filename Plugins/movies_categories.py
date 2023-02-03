@@ -26,7 +26,7 @@ import config
 @Star_Moviess_Tamil.on_message(filters.command("tamil_movies") & filters.private & filters.incoming)
 async def tamil_movies(client, message):
     await message.reply(
-        caption = MOVIES.TAMIL_MOVIES.format(
+        caption = Movies.TAMIL_MOVIES.format(
                 mention = message.from_user.mention
             ),
         quote=True,

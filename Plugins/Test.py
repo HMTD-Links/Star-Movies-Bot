@@ -28,7 +28,7 @@ ALIEN_COVENANT = "MOVIES.ALIEN_COVENANT"
 
 TELETIPS_MAIN_MENU_BUTTONS = [
             [
-                InlineKeyboardButton('📃 1/3', callback_data="GROUP_CALLBACK"),
+                InlineKeyboardButton('📃 1/4', callback_data="GROUP_CALLBACK"),
                 InlineKeyboardButton('Next ➡️', callback_data="HELP_CALLBACK")
             ]
         ]
@@ -41,7 +41,7 @@ async def alien_covenant(client, message):
             ),
         reply_markup=reply_markup,
         photo="https://telegra.ph/file/206f9013802376b39ad03.jpg",
-        quote=True,
+        quote=True
     )
     raise StopPropagation
 
@@ -51,70 +51,73 @@ async def callback_query(client: Client, query: CallbackQuery):
         TELETIPS_HELP_BUTTONS = [
             [
                 InlineKeyboardButton("⬅️ BACK", callback_data="START_CALLBACK"),
-                InlineKeyboardButton('📃 2/3', callback_data="GROUP_CALLBACK"),
+                InlineKeyboardButton('📃 2/4', callback_data="GROUP_CALLBACK"),
                 InlineKeyboardButton('Next ➡️', callback_data="HELP_CALLBACK")
             ]
             ]
         reply_markup = InlineKeyboardMarkup(TELETIPS_HELP_BUTTONS)
         try:
             await query.edit_message_text(
-                Translation.HELP,
-                disable_web_page_preview=True,
+                text = MOVIES.ALIEN_COVENANT_PAGE2.format(
+                        mention = query.from_user.mention
+                    ),
                 reply_markup=reply_markup
-            )
+            ),
+        photo="https://telegra.ph/file/206f9013802376b39ad03.jpg",
+        quote=True
+    )
         except MessageNotModified:
             pass
 
     elif query.data=="GROUP_CALLBACK":
         TELETIPS_GROUP_BUTTONS = [
             [
-                InlineKeyboardButton("Star Movies Feedback", url="https://t.me/Star_Movies_Feedback_Bot")
-            ],
-            [
                 InlineKeyboardButton("⬅️ BACK", callback_data="START_CALLBACK"),
+                InlineKeyboardButton('📃 3/4', callback_data="GROUP_CALLBACK"),
+                InlineKeyboardButton('Next ➡️', callback_data="HELP_CALLBACK")
             ]
             ]
         reply_markup = InlineKeyboardMarkup(TELETIPS_GROUP_BUTTONS)
         try:
             await query.edit_message_text(
-                Translation.SUPPORT,
-                disable_web_page_preview=True,
+                text = Translation.START.format(
+                        mention = query.from_user.mention
+                    ),
                 reply_markup=reply_markup
-            )
+            ),
+        photo="https://telegra.ph/file/206f9013802376b39ad03.jpg",
+        quote=True
+    )
         except MessageNotModified:
             pass    
 
     elif query.data=="TUTORIAL_CALLBACK":
         TELETIPS_TUTORIAL_BUTTONS = [
             [
-                InlineKeyboardButton("🤵 Admin", url="https://t.me/Star_Movies_Karthik")
-            ],
-            [
                 InlineKeyboardButton("⬅️ BACK", callback_data="START_CALLBACK"),
+                InlineKeyboardButton('📃 4/4', callback_data="GROUP_CALLBACK"),
+                InlineKeyboardButton('Next ➡️', callback_data="HELP_CALLBACK")
             ]
             ]
         reply_markup = InlineKeyboardMarkup(TELETIPS_TUTORIAL_BUTTONS)
         try:
             await query.edit_message_text(
-                Translation.ABOUT,
-                disable_web_page_preview=True,
+                text = Translation.START.format(
+                        mention = query.from_user.mention
+                    ),
                 reply_markup=reply_markup
-            )
+            ),
+        photo="https://telegra.ph/file/206f9013802376b39ad03.jpg",
+        quote=True
+    )
         except MessageNotModified:
             pass      
           
     elif query.data=="START_CALLBACK":
         TELETIPS_START_BUTTONS = [
             [
-                InlineKeyboardButton('👨‍💻 Creator', url='https://t.me/Star_Movies_Karthik')
-            ],
-            [
-                InlineKeyboardButton('😎 About', callback_data="TUTORIAL_CALLBACK"),
-                InlineKeyboardButton('👥 Support', callback_data="GROUP_CALLBACK"),
-                InlineKeyboardButton('😁 Help', callback_data="HELP_CALLBACK")
-            ],
-            [
-                InlineKeyboardButton('📣 Update Channel', url='https://t.me/Star_Moviess_Tamil')
+                InlineKeyboardButton("⬅️ BACK", callback_data="START_CALLBACK"),
+                InlineKeyboardButton('📃 4/4', callback_data="GROUP_CALLBACK"),
             ]
         ]
 
@@ -124,9 +127,11 @@ async def callback_query(client: Client, query: CallbackQuery):
                 text = Translation.START.format(
                         mention = query.from_user.mention
                     ),
-                disable_web_page_preview=True,
                 reply_markup=reply_markup
-            )
+            ),
+        photo="https://telegra.ph/file/206f9013802376b39ad03.jpg",
+        quote=True
+    )
         except MessageNotModified:
             pass    
         return

@@ -155,19 +155,19 @@ async def callback_query(client: Client, query: CallbackQuery):
 
 ALIEN_COVENANT = "Movies.ALIEN_COVENANT"
 
-TELETIPS_MAIN_MENU_BUTTONS_2 = [
+TELETIPS_MAIN_MENU_BUTTONS_U = [
             [
-                InlineKeyboardButton('Next 🥇', callback_data="TUTORIAL_CALLBACK_2"),
-                InlineKeyboardButton('Next 🥈', callback_data="GROUP_CALLBACK_2"),
+                InlineKeyboardButton('Next 🥇', callback_data="TUTORIAL_CALLBACK_U"),
+                InlineKeyboardButton('Next 🥈', callback_data="GROUP_CALLBACK_U"),
             ],
             [
-                InlineKeyboardButton('🔗 Direct Link', callback_data="HELP_CALLBACK_2")
+                InlineKeyboardButton('🔗 Direct Link', callback_data="HELP_CALLBACK_U")
             ]
         ]
 
 @Star_Moviess_Tamil.on_message(filters.command('alien_covenant') & filters.private)
 async def start(client, message):
-    reply_markup = InlineKeyboardMarkup(TELETIPS_MAIN_MENU_BUTTONS_2)
+    reply_markup = InlineKeyboardMarkup(TELETIPS_MAIN_MENU_BUTTONS_U)
     await message.reply_photo(
         caption = Movies.ALIEN_COVENANT.format(
                 mention = message.from_user.mention
@@ -180,13 +180,13 @@ async def start(client, message):
 
 @Star_Moviess_Tamil.on_callback_query()
 async def callback_query(client: Client, query: CallbackQuery):
-    if query.data=="HELP_CALLBACK_2":
-        TELETIPS_HELP_BUTTONS_2 = [
+    if query.data=="HELP_CALLBACK_U":
+        TELETIPS_HELP_BUTTONS_U = [
             [
-                InlineKeyboardButton("⬅️ Back", callback_data="START_CALLBACK_2")
+                InlineKeyboardButton("⬅️ Back", callback_data="START_CALLBACK_U")
             ]
             ]
-        reply_markup = InlineKeyboardMarkup(TELETIPS_HELP_BUTTONS_2)
+        reply_markup = InlineKeyboardMarkup(TELETIPS_HELP_BUTTONS_U)
         try:
             await query.edit_message_photo(
                 caption = Movies.ALIEN_COVENANT_PAGE3.format(
@@ -199,13 +199,13 @@ async def callback_query(client: Client, query: CallbackQuery):
         except MessageNotModified:
             pass
 
-    elif query.data=="GROUP_CALLBACK_2":
-        TELETIPS_GROUP_BUTTONS_2 = [
+    elif query.data=="GROUP_CALLBACK_U":
+        TELETIPS_GROUP_BUTTONS_U = [
             [
-                InlineKeyboardButton("⬅️ Back", callback_data="START_CALLBACK_2"),
+                InlineKeyboardButton("⬅️ Back", callback_data="START_CALLBACK_U"),
             ]
             ]
-        reply_markup = InlineKeyboardMarkup(TELETIPS_GROUP_BUTTONS_2)
+        reply_markup = InlineKeyboardMarkup(TELETIPS_GROUP_BUTTONS_U)
         try:
             await query.edit_message_text(
                 caption = Movies.ALIEN_COVENANT_PAGE2.format(
@@ -218,13 +218,13 @@ async def callback_query(client: Client, query: CallbackQuery):
         except MessageNotModified:
             pass    
 
-    elif query.data=="TUTORIAL_CALLBACK_2":
-        TELETIPS_TUTORIAL_BUTTONS_2 = [
+    elif query.data=="TUTORIAL_CALLBACK_U":
+        TELETIPS_TUTORIAL_BUTTONS_U = [
             [
-                InlineKeyboardButton("⬅️ Back", callback_data="START_CALLBACK_2"),
+                InlineKeyboardButton("⬅️ Back", callback_data="START_CALLBACK_U"),
             ]
             ]
-        reply_markup = InlineKeyboardMarkup(TELETIPS_TUTORIAL_BUTTONS_2)
+        reply_markup = InlineKeyboardMarkup(TELETIPS_TUTORIAL_BUTTONS_U)
         try:
             await query.edit_message_text(
                 caption = Movies.ALIEN_COVENANT_PAGE1.format(
@@ -237,18 +237,18 @@ async def callback_query(client: Client, query: CallbackQuery):
         except MessageNotModified:
             pass      
           
-    elif query.data=="START_CALLBACK_2":
-        TELETIPS_START_BUTTONS_2 = [
+    elif query.data=="START_CALLBACK_U":
+        TELETIPS_START_BUTTONS_U = [
             [
-                InlineKeyboardButton('Next 🥇', callback_data="TUTORIAL_CALLBACK_2"),
-                InlineKeyboardButton('Next 🥈', callback_data="GROUP_CALLBACK_2"),
+                InlineKeyboardButton('Next 🥇', callback_data="TUTORIAL_CALLBACK_U"),
+                InlineKeyboardButton('Next 🥈', callback_data="GROUP_CALLBACK_U"),
             ],
             [
-                InlineKeyboardButton('🔗 Direct Link', callback_data="HELP_CALLBACK_2")
+                InlineKeyboardButton('🔗 Direct Link', callback_data="HELP_CALLBACK_U")
             ]
         ]
 
-        reply_markup = InlineKeyboardMarkup(TELETIPS_START_BUTTONS_2)
+        reply_markup = InlineKeyboardMarkup(TELETIPS_START_BUTTONS_U)
         try:
             await query.edit_message_text(
                 caption = Movies.ALIEN_COVENANT.format(
